@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>D&D Monster Generator</title>
+<style>
+    body {
+        font-family: Georgia, serif;
+        background: #f3efe6;
+        padding: 30px;
+        max-width: 700px;
+        margin: auto;
+    }
+
+    h1 {
+        text-align: center;
+        font-family: "Palatino", serif;
+        margin-bottom: 20px;
+    }
+
+    button {
+        background: #6b1a1a;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    button:hover {
+        background: #8a2929;
+    }
+
+    .monster-box {
+        background: white;
+        border: 2px solid #6b1a1a;
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 5px;
+    }
+
+    .label {
+        font-weight: bold;
+        color: #6b1a1a;
+    }
+</style>
+</head>
+<body>
+
+<h1>🧙‍♂️ D&D Monster Generator</h1>
+
+<button onclick="generateMonster()">Generate Monster</button>
+
+<div id="monster" class="monster-box" style="display:none;"></div>
+
+<script>
+const monsterTypes = [
+    "Beast", "Aberration", "Undead", "Dragon", "Construct", "Fey",
+    "Fiend", "Celestial", "Giant", "Elemental", "Monstrosity", "Ooze"
+];
+
+const monsterSizes = [
+    "Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan"
+];
+
+const monsterAbilities = [
+    "Breathes fire",
+    "Regenerates health",
+    "Turns invisible",
+    "Paralyzing touch",
+    "Poisonous bite",
+    "Psychic scream",
+    "Shadow manipulation",
+    "Teleports short distances",
+    "Charming gaze",
+    "Acid spit",
+    "Stone skin",
+    "Flight"
+];
+
+const monsterTraits = [
+    "Aggressive", "Territorial", "Cunning", "Cowardly", "Honorable",
+    "Ancient", "Corrupted", "Mechanical", "Magical", "Stealthy"
+];
+
+// Function to get a random element from an array
+function pick(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function generateMonster() {
+    const name = pick([
+        "Gloomfang", "Bonecrawler", "Ash Serpent", "Frosthorn",
+        "Nightlurker", "Emberclaw", "Doomwraith", "Skitterbeast",
+        "Thunderjaw", "Gravehowl", "Storm Golem"
+    ]);
+
+    const type = pick(monsterTypes);
+    const size = pick(monsterSizes);
+    const ability = pick(monsterAbilities);
+    const trait = pick(monsterTraits);
+    const hitPoints = Math.floor(Math.random() * 150) + 20;
+    const armorClass = Math.floor(Math.random() * 10) + 10;
+
+    const monsterDiv = document.getElementById("monster");
+    monsterDiv.style.display = "block";
+
+    monsterDiv.innerHTML = `
+        <h2>${name}</h2>
+        <p><span class="label">Type:</span> ${size} ${type}</p>
+        <p><span class="label">Hit Points:</span> ${hitPoints}</p>
+        <p><span class="label">Armor Class:</span> ${armorClass}</p>
+        <p><span class="label">Special Ability:</span> ${ability}</p>
+        <p><span class="label">Trait:</span> ${trait}</p>
+    `;
+}
+</script>
+
+</body>
+</html>
+
