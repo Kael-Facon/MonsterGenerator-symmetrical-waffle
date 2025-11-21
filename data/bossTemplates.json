@@ -1,0 +1,6 @@
+{
+  "miniboss": {"name": "Mini-Boss", "hp": 1.25, "ac": 0, "atk": 2, "abilities": 1, "mutations": 1},
+  "elite": {"name": "Elite Boss", "hp": 1.5, "ac": 3, "atk": 3, "abilities": 2, "mutations": 2},
+  "mythic": {"name": "Mythic Boss", "hp": 2.0, "ac": 5, "atk": 4, "abilities": 3, "mutations": 3, "legendary": "3/day"}
+}
+

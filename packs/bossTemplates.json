@@ -1,0 +1,11 @@
+{
+  "type": "boss",
+  "name": "Dreadlord",
+  "hp": 3.0,
+  "ac": 6,
+  "atk": 5,
+  "abilities": 3,
+  "mutations": 3,
+  "legendary": "3/day"
+}
+

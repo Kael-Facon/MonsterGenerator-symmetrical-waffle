@@ -1,0 +1,6 @@
+{
+  "type": "mutation",
+  "name": "Acid Blood",
+  "effect": "Melee attackers take 2d6 acid damage"
+}
+

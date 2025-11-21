@@ -1,0 +1,23 @@
+{
+  "fire": {
+    "name": "Fire",
+    "res": ["fire"],
+    "abilities": ["Burning Aura", "Flame Body", "Inferno Surge"],
+    "spells": {
+      "atwill": ["Fire Bolt"],
+      "daily": ["Burning Hands", "Fireball"]
+    },
+    "attacks": ["Fire Burst", "Ember Bite"]
+  },
+  "cold": {
+    "name": "Cold",
+    "res": ["cold"],
+    "abilities": ["Frost Armor", "Freezing Touch"],
+    "spells": {
+      "atwill": ["Ray of Frost"],
+      "daily": ["Ice Knife", "Cone of Cold"]
+    },
+    "attacks": ["Frost Crack", "Frozen Claw"]
+  }
+}
+

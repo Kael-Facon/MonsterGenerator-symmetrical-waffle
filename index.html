@@ -2,120 +2,145 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>D&D Monster Generator</title>
 <style>
     body {
-        font-family: Georgia, serif;
-        background: #f3efe6;
-        padding: 30px;
-        max-width: 700px;
+        font-family: "Georgia", serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+        line-height: 1.4;
+    }
+
+    .container {
+        max-width: 900px;
         margin: auto;
-    }
-
-    h1 {
-        text-align: center;
-        font-family: "Palatino", serif;
-        margin-bottom: 20px;
-    }
-
-    button {
-        background: #6b1a1a;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-    }
-    button:hover {
-        background: #8a2929;
-    }
-
-    .monster-box {
-        background: white;
-        border: 2px solid #6b1a1a;
         padding: 20px;
-        margin-top: 20px;
-        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        border-radius: 8px;
     }
 
-    .label {
-        font-weight: bold;
-        color: #6b1a1a;
+    h1, h2 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .statline {
+        margin: 5px 0;
+        font-size: 1rem;
+        word-wrap: break-word;
+    }
+
+    button, input[type=file] {
+        font-size: 1rem;
+        padding: 8px 12px;
+        margin: 5px 0;
+        border-radius: 5px;
+        border: 1px solid #888;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #eee;
+    }
+
+    #monster {
+        display: none;
+        margin-top: 20px;
+    }
+
+    .collapsible {
+        background-color: #ddd;
+        color: #000;
+        cursor: pointer;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 1rem;
+        border-radius: 5px;
+        margin-top: 5px;
+    }
+
+    .collapsible.active {
+        background-color: #ccc;
+    }
+
+    .content {
+        padding: 0 10px;
+        display: none;
+        overflow: hidden;
+        background-color: #f9f9f9;
+        border-left: 3px solid #888;
+        margin-bottom: 5px;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .action-block {
+        margin: 5px 0;
+        font-size: 0.95rem;
+    }
+
+    .abilities-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 5px 0;
+    }
+
+    .abilities-table th, .abilities-table td {
+        border: 1px solid #999;
+        padding: 4px;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+        .container {
+            padding: 10px;
+        }
+
+        button, input[type=file] {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .statline {
+            font-size: 0.9rem;
+        }
+
+        .abilities-table th, .abilities-table td {
+            font-size: 0.8rem;
+            padding: 3px;
+        }
+
+        .action-block {
+            font-size: 0.85rem;
+        }
     }
 </style>
 </head>
 <body>
+<div class="container">
+    <h1>D&D Monster Generator</h1>
 
-<h1>🧙‍♂️ D&D Monster Generator</h1>
+    <div>
+        <button onclick="generateMonster()">Generate Monster</button>
+        <button onclick="exportMonster()">Export Monster</button>
+        <input type="file" id="importFile">
+        <button onclick="importMonster()">Import Monster</button>
+    </div>
 
-<button onclick="generateMonster()">Generate Monster</button>
+    <h3>Load Additional Monster Pack (.JSON)</h3>
+    <input type="file" id="packFile" multiple>
+    <button onclick="loadPacks()">Load Packs</button>
 
-<div id="monster" class="monster-box" style="display:none;"></div>
+    <div id="monster"></div>
+</div>
 
-<script>
-const monsterTypes = [
-    "Beast", "Aberration", "Undead", "Dragon", "Construct", "Fey",
-    "Fiend", "Celestial", "Giant", "Elemental", "Monstrosity", "Ooze"
-];
-
-const monsterSizes = [
-    "Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan"
-];
-
-const monsterAbilities = [
-    "Breathes fire",
-    "Regenerates health",
-    "Turns invisible",
-    "Paralyzing touch",
-    "Poisonous bite",
-    "Psychic scream",
-    "Shadow manipulation",
-    "Teleports short distances",
-    "Charming gaze",
-    "Acid spit",
-    "Stone skin",
-    "Flight"
-];
-
-const monsterTraits = [
-    "Aggressive", "Territorial", "Cunning", "Cowardly", "Honorable",
-    "Ancient", "Corrupted", "Mechanical", "Magical", "Stealthy"
-];
-
-// Function to get a random element from an array
-function pick(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
-}
-
-function generateMonster() {
-    const name = pick([
-        "Gloomfang", "Bonecrawler", "Ash Serpent", "Frosthorn",
-        "Nightlurker", "Emberclaw", "Doomwraith", "Skitterbeast",
-        "Thunderjaw", "Gravehowl", "Storm Golem"
-    ]);
-
-    const type = pick(monsterTypes);
-    const size = pick(monsterSizes);
-    const ability = pick(monsterAbilities);
-    const trait = pick(monsterTraits);
-    const hitPoints = Math.floor(Math.random() * 150) + 20;
-    const armorClass = Math.floor(Math.random() * 10) + 10;
-
-    const monsterDiv = document.getElementById("monster");
-    monsterDiv.style.display = "block";
-
-    monsterDiv.innerHTML = `
-        <h2>${name}</h2>
-        <p><span class="label">Type:</span> ${size} ${type}</p>
-        <p><span class="label">Hit Points:</span> ${hitPoints}</p>
-        <p><span class="label">Armor Class:</span> ${armorClass}</p>
-        <p><span class="label">Special Ability:</span> ${ability}</p>
-        <p><span class="label">Trait:</span> ${trait}</p>
-    `;
-}
-</script>
-
+<script src="monster.js"></script>
 </body>
 </html>
 

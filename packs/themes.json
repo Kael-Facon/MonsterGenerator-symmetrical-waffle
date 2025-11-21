@@ -1,0 +1,12 @@
+{
+  "type": "theme",
+  "name": "Firestorm",
+  "res": ["fire"],
+  "abilities": ["Inferno Body", "Flame Aura"],
+  "spells": {
+    "atwill": ["Fire Bolt"],
+    "daily": ["Meteor Swarm"]
+  },
+  "attacks": ["Flame Strike", "Burning Tail"]
+}
+
