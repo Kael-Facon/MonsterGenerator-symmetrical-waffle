@@ -5,139 +5,170 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>D&D Monster Generator</title>
 <style>
-    body {
-        font-family: "Georgia", serif;
-        background-color: #f5f5f5;
-        margin: 0;
-        padding: 0;
-        line-height: 1.4;
-    }
+  /* ====== THEME ====== */
+  :root {
+    --bg: #0e1425;
+    --bg-panel: #1a253a;
+    --bg-light: #22304d;
+    --accent: #4ea1ff;
+    --accent-soft: #7bbdff;
+    --text: #e4e9f2;
+    --shadow: rgba(0,0,0,0.4);
+  }
 
-    .container {
-        max-width: 900px;
-        margin: auto;
-        padding: 20px;
-        background-color: #fff;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        border-radius: 8px;
-    }
+  body {
+    font-family: 'Georgia', serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+  }
 
-    h1, h2 {
-        text-align: center;
-        margin-bottom: 10px;
-    }
+  /* ====== LAYOUT ====== */
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+  }
 
-    .statline {
-        margin: 5px 0;
-        font-size: 1rem;
-        word-wrap: break-word;
-    }
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
-    button, input[type=file] {
-        font-size: 1rem;
-        padding: 8px 12px;
-        margin: 5px 0;
-        border-radius: 5px;
-        border: 1px solid #888;
-        cursor: pointer;
-    }
+  /* ====== CARD ====== */
+  .card {
+    background: var(--bg-panel);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px var(--shadow);
+    margin-top: 20px;
+    animation: fadeIn .3s ease;
+  }
 
-    button:hover {
-        background-color: #eee;
-    }
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);} 
+    to {opacity: 1; transform: translateY(0);}  
+  }
 
-    #monster {
-        display: none;
-        margin-top: 20px;
-    }
+  .statline {
+    margin: 5px 0;
+    background: var(--bg-light);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
 
-    .collapsible {
-        background-color: #ddd;
-        color: #000;
-        cursor: pointer;
-        padding: 10px;
-        width: 100%;
-        border: none;
-        text-align: left;
-        outline: none;
-        font-size: 1rem;
-        border-radius: 5px;
-        margin-top: 5px;
-    }
+  /* ====== BUTTONS ====== */
+  button, input[type=file] {
+    font-size: 1rem;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
+    background: var(--accent);
+    color: black;
+    cursor: pointer;
+    margin: 5px 4px;
+    transition: 0.2s;
+  }
 
-    .collapsible.active {
-        background-color: #ccc;
-    }
+  button:hover {
+    background: var(--accent-soft);
+  }
 
-    .content {
-        padding: 0 10px;
-        display: none;
-        overflow: hidden;
-        background-color: #f9f9f9;
-        border-left: 3px solid #888;
-        margin-bottom: 5px;
-        border-radius: 0 0 5px 5px;
-    }
+  input[type=file] {
+    background: var(--bg-light);
+    color: var(--text);
+  }
 
-    .action-block {
-        margin: 5px 0;
-        font-size: 0.95rem;
-    }
+  /* ====== COLLAPSIBLES ====== */
+  .collapsible {
+    background: var(--bg-light);
+    color: var(--text);
+    cursor: pointer;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    .abilities-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 5px 0;
-    }
+  .collapsible.active {
+    background: var(--accent);
+    color: black;
+  }
 
-    .abilities-table th, .abilities-table td {
-        border: 1px solid #999;
-        padding: 4px;
-        text-align: center;
-        font-size: 0.9rem;
-    }
+  .content {
+    padding: 0 12px;
+    display: none;
+    overflow: hidden;
+    background: var(--bg-panel);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 0 6px 6px;
+    margin-bottom: 10px;
+  }
 
-    @media (max-width: 600px) {
-        .container {
-            padding: 10px;
-        }
+  .action-block {
+    margin: 8px 0;
+    padding: 8px;
+    background: var(--bg-light);
+    border-radius: 5px;
+    font-size: 0.95rem;
+  }
 
-        button, input[type=file] {
-            width: 100%;
-            box-sizing: border-box;
-        }
+  /* ====== TABLES ====== */
+  .abilities-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
 
-        .statline {
-            font-size: 0.9rem;
-        }
+  .abilities-table th,
+  .abilities-table td {
+    border: 1px solid var(--accent);
+    padding: 8px;
+    text-align: center;
+    background: var(--bg-light);
+    font-size: 0.9rem;
+    border-radius: 3px;
+  }
 
-        .abilities-table th, .abilities-table td {
-            font-size: 0.8rem;
-            padding: 3px;
-        }
-
-        .action-block {
-            font-size: 0.85rem;
-        }
-    }
+  /* ====== MOBILES ====== */
+  @media (max-width: 600px) {
+    .container { padding: 10px; }
+    button, input[type=file] { width: 100%; box-sizing: border-box; }
+    .statline { font-size: 0.95rem; }
+    .action-block { font-size: 0.85rem; }
+  }
 </style>
 </head>
 <body>
 <div class="container">
-    <h1>D&D Monster Generator</h1>
+  <h1>D&D Monster Generator</h1>
 
-    <div>
-        <button onclick="generateMonster()">Generate Monster</button>
-        <button onclick="exportMonster()">Export Monster</button>
-        <input type="file" id="importFile">
-        <button onclick="importMonster()">Import Monster</button>
-    </div>
+  <!-- Controls -->
+  <div>
+    <button onclick="generateMonster()">Generate Monster</button>
+    <button onclick="exportMonster()">Export Monster</button>
+    <button onclick="document.getElementById('importFile').click()">Import Monster</button>
+    <input type="file" id="importFile" style="display:none" onchange="importMonster()">
+  </div>
+  
+  <!-- Monster Output -->
+  <div id="monster" class="card"></div>
 
-    <h3>Load Additional Monster Pack (.JSON)</h3>
-    <input type="file" id="packFile" multiple>
-    <button onclick="loadPacks()">Load Packs</button>
+  <!-- Pack Loader -->
+  <h3>Load Additional Monster Pack (.JSON)</h3>
+  <button onclick="document.getElementById('packFile').click()">Load Packs</button>
+  <input type="file" id="packFile" multiple accept="application/json" style="display:none" onchange="loadPacks()">
 
-    <div id="monster"></div>
 </div>
 
 <script src="monster.js"></script>
