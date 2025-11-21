@@ -1,23 +1,788 @@
-{
-  "fire": {
-    "name": "Fire",
-    "res": ["fire"],
-    "abilities": ["Burning Aura", "Flame Body", "Inferno Surge"],
-    "spells": {
-      "atwill": ["Fire Bolt"],
-      "daily": ["Burning Hands", "Fireball"]
+  {
+    "fire": {
+      "name": "Fire",
+      "res": [
+        "fire"
+      ],
+      "abilities": [
+        "Burning Aura",
+        "Flame Body",
+        "Inferno Surge"
+      ],
+      "spells": {
+        "atwill": [
+          "Fire Bolt"
+        ],
+        "daily": [
+          "Burning Hands",
+          "Fireball"
+        ]
+      },
+      "attacks": [
+        "Fire Burst",
+        "Ember Bite"
+      ]
     },
-    "attacks": ["Fire Burst", "Ember Bite"]
-  },
-  "cold": {
-    "name": "Cold",
-    "res": ["cold"],
-    "abilities": ["Frost Armor", "Freezing Touch"],
-    "spells": {
-      "atwill": ["Ray of Frost"],
-      "daily": ["Ice Knife", "Cone of Cold"]
+    "cold": {
+      "name": "Cold",
+      "res": [
+        "cold"
+      ],
+      "abilities": [
+        "Frost Armor",
+        "Freezing Touch",
+        "Icebound Reflexes"
+      ],
+      "spells": {
+        "atwill": [
+          "Ray of Frost"
+        ],
+        "daily": [
+          "Ice Knife",
+          "Cone of Cold"
+        ]
+      },
+      "attacks": [
+        "Frost Crack",
+        "Frozen Claw"
+      ]
     },
-    "attacks": ["Frost Crack", "Frozen Claw"]
+    "lightning": {
+      "name": "Lightning",
+      "res": [
+        "lightning",
+        "electricity"
+      ],
+      "abilities": [
+        "Shocking Aura",
+        "Static Charge",
+        "Thunder Step"
+      ],
+      "spells": {
+        "atwill": [
+          "Shocking Grasp"
+        ],
+        "daily": [
+          "Lightning Bolt",
+          "Chain Lightning"
+        ]
+      },
+      "attacks": [
+        "Spark Lash",
+        "Thunder Strike"
+      ]
+    },
+    "poison": {
+      "name": "Poison",
+      "res": [
+        "poison"
+      ],
+      "abilities": [
+        "Toxic Cloud",
+        "Venomous Bite",
+        "Corrosive Touch"
+      ],
+      "spells": {
+        "atwill": [
+          "Poison Spray"
+        ],
+        "daily": [
+          "Cloudkill",
+          "Contagion"
+        ]
+      },
+      "attacks": [
+        "Acidic Claw",
+        "Venom Fang"
+      ]
+    },
+    "earth": {
+      "name": "Earth",
+      "res": [
+        "bludgeoning",
+        "earth"
+      ],
+      "abilities": [
+        "Stone Skin",
+        "Seismic Stomp",
+        "Earthen Grasp"
+      ],
+      "spells": {
+        "atwill": [
+          "Mold Earth"
+        ],
+        "daily": [
+          "Erupting Earth",
+          "Stone Shape"
+        ]
+      },
+      "attacks": [
+        "Rock Slam",
+        "Quake Punch"
+      ]
+    },
+    "acid": {
+      "name": "Acid",
+      "res": [
+        "acid"
+      ],
+      "abilities": [
+        "Corrosive Aura",
+        "Acidic Spit",
+        "Melting Touch"
+      ],
+      "spells": {
+        "atwill": [
+          "Acid Splash"
+        ],
+        "daily": [
+          "Melf's Acid Arrow",
+          "Vitriolic Sphere"
+        ]
+      },
+      "attacks": [
+        "Caustic Bite",
+        "Acid Spray"
+      ]
+    },
+    "necrotic": {
+      "name": "Necrotic",
+      "res": [
+        "necrotic"
+      ],
+      "abilities": [
+        "Life Drain",
+        "Soul Rot",
+        "Grave Touch"
+      ],
+      "spells": {
+        "atwill": [
+          "Chill Touch"
+        ],
+        "daily": [
+          "Blight",
+          "Finger of Death"
+        ]
+      },
+      "attacks": [
+        "Death Claw",
+        "Soul Rend"
+      ]
+    },
+    "radiant": {
+      "name": "Radiant",
+      "res": [
+        "radiant"
+      ],
+      "abilities": [
+        "Blinding Aura",
+        "Healing Light",
+        "Solar Flare"
+      ],
+      "spells": {
+        "atwill": [
+          "Light"
+        ],
+        "daily": [
+          "Sunbeam",
+          "Daylight"
+        ]
+      },
+      "attacks": [
+        "Radiant Slash",
+        "Holy Smite"
+      ]
+    },
+    "shadow": {
+      "name": "Shadow",
+      "res": [
+        "necrotic",
+        "shadow"
+      ],
+      "abilities": [
+        "Umbral Step",
+        "Shadow Cloak",
+        "Fear Induction"
+      ],
+      "spells": {
+        "atwill": [
+          "Minor Illusion"
+        ],
+        "daily": [
+          "Shadow Blade",
+          "Darkness"
+        ]
+      },
+      "attacks": [
+        "Nightmare Claw",
+        "Eclipse Strike"
+      ]
+    },
+    "wind": {
+      "name": "Wind",
+      "res": [
+        "force",
+        "slashing"
+      ],
+      "abilities": [
+        "Gale Force",
+        "Aerial Agility",
+        "Whirling Defense"
+      ],
+      "spells": {
+        "atwill": [
+          "Gust"
+        ],
+        "daily": [
+          "Wind Wall",
+          "Control Winds"
+        ]
+      },
+      "attacks": [
+        "Air Slash",
+        "Tornado Kick"
+      ]
+    },
+    "water": {
+      "name": "Water",
+      "res": [
+        "cold",
+        "acid"
+      ],
+      "abilities": [
+        "Tidal Wave",
+        "Hydro Shield",
+        "Mist Step"
+      ],
+      "spells": {
+        "atwill": [
+          "Shape Water"
+        ],
+        "daily": [
+          "Watery Sphere",
+          "Control Water"
+        ]
+      },
+      "attacks": [
+        "Aqua Fang",
+        "Water Jet"
+      ]
+    },
+    "psychic": {
+      "name": "Psychic",
+      "res": [
+        "psychic"
+      ],
+      "abilities": [
+        "Mind Pierce",
+        "Telepathic Link",
+        "Confounding Presence"
+      ],
+      "spells": {
+        "atwill": [
+          "Mage Hand",
+          "Mind Sliver"
+        ],
+        "daily": [
+          "Dominate Person",
+          "Mind Spike"
+        ]
+      },
+      "attacks": [
+        "Psychic Blade",
+        "Mental Crush"
+      ]
+    },
+    "chaos": {
+      "name": "Chaos",
+      "res": [
+        "force",
+        "psychic"
+      ],
+      "abilities": [
+        "Random Surge",
+        "Unpredictable Strike",
+        "Entropy Aura"
+      ],
+      "spells": {
+        "atwill": [
+          "Chaos Bolt"
+        ],
+        "daily": [
+          "Prismatic Spray",
+          "Wild Magic Surge"
+        ]
+      },
+      "attacks": [
+        "Anarchic Claw",
+        "Warping Punch"
+      ]
+    },
+    "lava": {
+      "name": "Lava",
+      "res": [
+        "fire",
+        "earth"
+      ],
+      "abilities": [
+        "Molten Body",
+        "Lava Flow",
+        "Scalding Aura"
+      ],
+      "spells": {
+        "atwill": [
+          "Fire Bolt"
+        ],
+        "daily": [
+          "Erupting Earth",
+          "Wall of Fire"
+        ]
+      },
+      "attacks": [
+        "Magma Slam",
+        "Molten Claw"
+      ]
+    },
+    "icefire": {
+      "name": "Icefire",
+      "res": [
+        "fire",
+        "cold"
+      ],
+      "abilities": [
+        "Frostburn Aura",
+        "Thermal Shock",
+        "Blazing Chill"
+      ],
+      "spells": {
+        "atwill": [
+          "Ray of Frost",
+          "Fire Bolt"
+        ],
+        "daily": [
+          "Cone of Cold",
+          "Fireball"
+        ]
+      },
+      "attacks": [
+        "Chillflame Strike",
+        "Frozen Ember"
+      ]
+    },
+    "acidstorm": {
+      "name": "Acidstorm",
+      "res": [
+        "acid",
+        "lightning"
+      ],
+      "abilities": [
+        "Corrosive Charge",
+        "Toxic Static",
+        "Acidic Surge"
+      ],
+      "spells": {
+        "atwill": [
+          "Acid Splash",
+          "Shocking Grasp"
+        ],
+        "daily": [
+          "Vitriolic Sphere",
+          "Chain Lightning"
+        ]
+      },
+      "attacks": [
+        "Electroacid Lash",
+        "Corrosive Strike"
+      ]
+    },
+    "poisonwind": {
+      "name": "Poisonwind",
+      "res": [
+        "poison",
+        "wind"
+      ],
+      "abilities": [
+        "Toxic Gale",
+        "Venomous Drift",
+        "Poison Cyclone"
+      ],
+      "spells": {
+        "atwill": [
+          "Poison Spray",
+          "Gust"
+        ],
+        "daily": [
+          "Cloudkill",
+          "Wind Wall"
+        ]
+      },
+      "attacks": [
+        "Venom Whip",
+        "Toxic Tornado"
+      ]
+    },
+    "shadowflame": {
+      "name": "Shadowflame",
+      "res": [
+        "fire",
+        "shadow"
+      ],
+      "abilities": [
+        "Dark Blaze",
+        "Umbral Heat",
+        "Eclipsing Flame"
+      ],
+      "spells": {
+        "atwill": [
+          "Minor Illusion",
+          "Fire Bolt"
+        ],
+        "daily": [
+          "Darkness",
+          "Fireball"
+        ]
+      },
+      "attacks": [
+        "Eclipse Claw",
+        "Shadow Ember"
+      ]
+    },
+    "psychicstorm": {
+      "name": "Psychicstorm",
+      "res": [
+        "psychic",
+        "lightning"
+      ],
+      "abilities": [
+        "Mental Shock",
+        "Storm of Minds",
+        "Telekinetic Surge"
+      ],
+      "spells": {
+        "atwill": [
+          "Mind Sliver",
+          "Shocking Grasp"
+        ],
+        "daily": [
+          "Mind Spike",
+          "Chain Lightning"
+        ]
+      },
+      "attacks": [
+        "Psionic Bolt",
+        "Electro Mindstrike"
+      ]
+    },
+    "radiantfrost": {
+      "name": "Radiantfrost",
+      "res": [
+        "radiant",
+        "cold"
+      ],
+      "abilities": [
+        "Blinding Freeze",
+        "Solar Chill",
+        "Frostlight Aura"
+      ],
+      "spells": {
+        "atwill": [
+          "Light",
+          "Ray of Frost"
+        ],
+        "daily": [
+          "Sunbeam",
+          "Cone of Cold"
+        ]
+      },
+      "attacks": [
+        "Frostlight Slash",
+        "Radiant Icicle"
+      ]
+    },
+    "earthenquake": {
+      "name": "Earthenquake",
+      "res": [
+        "earth",
+        "force"
+      ],
+      "abilities": [
+        "Seismic Slam",
+        "Stonequake Aura",
+        "Forceful Tremor"
+      ],
+      "spells": {
+        "atwill": [
+          "Mold Earth",
+          "Thunderwave"
+        ],
+        "daily": [
+          "Erupting Earth",
+          "Earthquake"
+        ]
+      },
+      "attacks": [
+        "Quaking Fist",
+        "Stone Shard Barrage"
+      ]
+    },
+    "fiery_poison": {
+      "name": "Fiery Poison",
+      "res": [
+        "fire",
+        "poison"
+      ],
+      "abilities": [
+        "Venomous Blaze",
+        "Toxic Ember",
+        "Corrosive Flame"
+      ],
+      "spells": {
+        "atwill": [
+          "Poison Spray",
+          "Fire Bolt"
+        ],
+        "daily": [
+          "Burning Hands",
+          "Cloudkill"
+        ]
+      },
+      "attacks": [
+        "Acidic Fire Bite",
+        "Blazing Fang"
+      ]
+    },
+    "ice_lightning": {
+      "name": "Ice Lightning",
+      "res": [
+        "cold",
+        "lightning"
+      ],
+      "abilities": [
+        "Frozen Shock",
+        "Electrified Frost Armor",
+        "Thunder Ice Step"
+      ],
+      "spells": {
+        "atwill": [
+          "Ray of Frost",
+          "Shocking Grasp"
+        ],
+        "daily": [
+          "Cone of Cold",
+          "Lightning Bolt"
+        ]
+      },
+      "attacks": [
+        "Frost Spark Slash",
+        "Electrified Claw"
+      ]
+    },
+    "earth_acid": {
+      "name": "Earth Acid",
+      "res": [
+        "earth",
+        "acid"
+      ],
+      "abilities": [
+        "Corrosive Stoneskin",
+        "Acidic Quake",
+        "Melting Fist"
+      ],
+      "spells": {
+        "atwill": [
+          "Mold Earth",
+          "Acid Splash"
+        ],
+        "daily": [
+          "Erupting Earth",
+          "Vitriolic Sphere"
+        ]
+      },
+      "attacks": [
+        "Caustic Slam",
+        "Acid Rock Punch"
+      ]
+    },
+    "shadow_fire": {
+      "name": "Shadow Fire",
+      "res": [
+        "fire",
+        "shadow"
+      ],
+      "abilities": [
+        "Cloaked Flames",
+        "Infernal Veil",
+        "Dark Ember Aura"
+      ],
+      "spells": {
+        "atwill": [
+          "Minor Illusion",
+          "Fire Bolt"
+        ],
+        "daily": [
+          "Fireball",
+          "Darkness"
+        ]
+      },
+      "attacks": [
+        "Shadowflame Claw",
+        "Ebon Blaze"
+      ]
+    },
+    "wind_water": {
+      "name": "Wind Water",
+      "res": [
+        "force",
+        "cold"
+      ],
+      "abilities": [
+        "Torrential Gust",
+        "Mist Cyclone",
+        "Hydro Jet Dash"
+      ],
+      "spells": {
+        "atwill": [
+          "Gust",
+          "Shape Water"
+        ],
+        "daily": [
+          "Control Water",
+          "Wind Wall"
+        ]
+      },
+      "attacks": [
+        "Whirlpool Strike",
+        "Air-Water Slash"
+      ]
+    },
+    "psychic_fire": {
+      "name": "Psychic Fire",
+      "res": [
+        "psychic",
+        "fire"
+      ],
+      "abilities": [
+        "Mindflame",
+        "Telepathic Inferno",
+        "Cognitive Burn"
+      ],
+      "spells": {
+        "atwill": [
+          "Mind Sliver",
+          "Fire Bolt"
+        ],
+        "daily": [
+          "Fireball",
+          "Dominate Person"
+        ]
+      },
+      "attacks": [
+        "Mental Flame Lash",
+        "Pyro Mind Strike"
+      ]
+    },
+    "necrotic_ice": {
+      "name": "Necrotic Ice",
+      "res": [
+        "necrotic",
+        "cold"
+      ],
+      "abilities": [
+        "Frozen Decay",
+        "Chilling Rot",
+        "Deathly Frost"
+      ],
+      "spells": {
+        "atwill": [
+          "Chill Touch",
+          "Ray of Frost"
+        ],
+        "daily": [
+          "Blight",
+          "Cone of Cold"
+        ]
+      },
+      "attacks": [
+        "Frostbite Claw",
+        "Soul Ice Slash"
+      ]
+    },
+    "chaos_poison": {
+      "name": "Chaos Poison",
+      "res": [
+        "psychic",
+        "poison"
+      ],
+      "abilities": [
+        "Mutating Venom",
+        "Chaotic Aura",
+        "Mind Rot"
+      ],
+      "spells": {
+        "atwill": [
+          "Chaos Bolt",
+          "Poison Spray"
+        ],
+        "daily": [
+          "Wild Magic Surge",
+          "Cloudkill"
+        ]
+      },
+      "attacks": [
+        "Venomous Anarchy Strike",
+        "Warping Fang"
+      ]
+    },
+    "radiant_wind": {
+      "name": "Radiant Wind",
+      "res": [
+        "radiant",
+        "force"
+      ],
+      "abilities": [
+        "Solar Gale",
+        "Blinding Cyclone",
+        "Air of Light"
+      ],
+      "spells": {
+        "atwill": [
+          "Light",
+          "Gust"
+        ],
+        "daily": [
+          "Sunbeam",
+          "Control Winds"
+        ]
+      },
+      "attacks": [
+        "Luminescent Slash",
+        "Solar Tornado"
+      ]
+    },
+    "earth_fire": {
+      "name": "Earth Fire",
+      "res": [
+        "fire",
+        "earth"
+      ],
+      "abilities": [
+        "Molten Core",
+        "Lava Surge",
+        "Fiery Tremor"
+      ],
+      "spells": {
+        "atwill": [
+          "Fire Bolt",
+          "Mold Earth"
+        ],
+        "daily": [
+          "Erupting Earth",
+          "Fireball"
+        ]
+      },
+      "attacks": [
+        "Lava Punch",
+        "Magma Slam"
+      ]
+    }
   }
-}
-

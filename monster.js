@@ -167,14 +167,23 @@ function generateMonster(){
 
     // Boss template
     let boss=null;
-    if(Math.random()<0.35){boss=pick(Object.values(bossTemplates)); hp=Math.floor(hp*boss.hp); ac+=boss.ac;}
+    if(Math.random()<0.35)
+    {
+        boss=pick(Object.values(bossTemplates));
+        hp=Math.floor(hp*boss.hp);
+        ac+=boss.ac;
+    }
 
     const atkBonus = boss ? boss.atk : 0;
     const attacks = generateAttacks(tA,tB,cr,atkBonus);
     const spells = generateSpells(tA,tB,mod(stats.CHA));
 
     let abilities = [pick(tA.abilities), pick(tB.abilities)];
-    if(boss){for(let i=0;i<boss.abilities;i++) abilities.push(pick([...tA.abilities,...tB.abilities]));}
+    if(boss)
+    {
+        for(let i=0;i<boss.abilities;i++) 
+            abilities.push(pick([...tA.abilities,...tB.abilities]));
+    }
 
     const res = Array.from(new Set([...tA.res,...tB.res]));
 
@@ -191,7 +200,7 @@ function generateMonster(){
 <td>${stats.CHA} (${mod(stats.CHA)>=0?"+":""}${mod(stats.CHA)})</td></tr></table>`;
 
     monsterDiv.innerHTML=`
-<h2>${name}${boss?` — <span style="color:#8a2929">${boss.name}</span>`:""}</h2>
+<h2>${tA.name} and ${tB.name} ${name}${boss?` — <span style="color:#8a2929">${boss.name}</span>`:""}</h2>
 <p class="statline">${size} ${type}, ${alignment}</p>
 <p class="statline"><b>AC:</b> ${ac} &nbsp;&nbsp; <b>HP:</b> ${hp} &nbsp;&nbsp; <b>Speed:</b> 30 ft.</p>
 ${abilityHTML}

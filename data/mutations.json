@@ -1,8 +1,70 @@
 [
-  {"name": "Chitin Plating", "effect": "AC +2"},
-  {"name": "Adrenal Surge", "effect": "+1 attack bonus"},
-  {"name": "Toxic Blood", "effect": "Melee attackers take 1d6 poison"},
-  {"name": "Winged Mutation", "effect": "Gains flying speed"},
-  {"name": "Extra Limb", "effect": "Gains 1 extra attack"}
+  {
+    "name": "Chitin Plating",
+    "effect": "AC +2"
+  },
+  {
+    "name": "Adrenal Surge",
+    "effect": "+1 attack bonus"
+  },
+  {
+    "name": "Toxic Blood",
+    "effect": "Melee attackers take 1d6 poison"
+  },
+  {
+    "name": "Winged Mutation",
+    "effect": "Gains flying speed"
+  },
+  {
+    "name": "Extra Limb",
+    "effect": "Gains 1 extra attack"
+  },
+  {
+    "name": "Flaming Tail",
+    "effect": "Deals 1d6 fire damage to creatures in a 5 ft. cone when the monster uses its tail attack."
+  },
+  {
+    "name": "Poison Spines",
+    "effect": "Melee attackers take 1d6 poison damage when they hit the monster with a melee attack."
+  },
+  {
+    "name": "Crystal Skin",
+    "effect": "The monster gains +2 AC against non-magical physical attacks."
+  },
+  {
+    "name": "Echoing Roar",
+    "effect": "All creatures within 15 ft. must succeed on a DC 13 Constitution save or be deafened and have their speed halved until the start of the monster's next turn."
+  },
+  {
+    "name": "Chilling Touch",
+    "effect": "Melee attacks reduce target’s speed by 10 ft. until the start of its next turn."
+  },
+  {
+    "name": "Electro Aura",
+    "effect": "Creatures that hit the monster with melee attacks take 1d6 lightning damage."
+  },
+  {
+    "name": "Shadow Clone",
+    "effect": "Once per short rest, the monster can create a duplicate that has 1 HP and confuses attackers (attack rolls against the clone have disadvantage)."
+  },
+  {
+    "name": "Regenerative Flesh",
+    "effect": "The monster regains 5 HP at the start of its turn if it has at least 1 HP."
+  },
+  {
+    "name": "Gravity Field",
+    "effect": "All creatures within 10 ft. have their speed reduced by 10 ft. until the start of the monster’s next turn."
+  },
+  {
+    "name": "Spore Cloud",
+    "effect": "Once per short rest, the monster can release spores in a 10 ft. radius. Creatures must succeed on a DC 13 Constitution save or be blinded until the start of the monster’s next turn."
+  },
+  {
+    "name": "Mirror Wings",
+    "effect": "Ranged attacks against the monster reflect 1d4 damage back to the attacker."
+  },
+  {
+    "name": "Siphoning Gaze",
+    "effect": "When the monster hits with a melee attack, it regains HP equal to 1d4 plus the monster's Constitution modifier."
+  }
 ]
-
